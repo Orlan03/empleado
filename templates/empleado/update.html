@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block title %} Acutalizar empleados{% endblock title %}
+
+{% block content %} 
+    
+<div class="grid-container">
+    <div class=" grid-x">
+        <h1 class="cell">Modificar datos del empleados</h1>
+        <div class="cell">
+            <form class="grid-x" method="POST">{%csrf_token %}
+              
+                <div class="medium-6 cell">
+                    <label>Nombres:
+                       {{form.first_name}}
+                    </label>
+                </div>
+                <div class="medium-6 cell">
+                    <label>Apellido:
+                       {{form.last_name}}
+                    </label>
+                </div>
+                <div class="medium-6 cell">
+                    <label>departamento:
+                       {{form.departamento}}
+                    </label>
+                </div>
+                <div class="medium-6 cell">
+                    <label>Area:
+                       {{form.job}}
+                    </label>
+                </div>
+                <div class="medium-6 cell">
+                    <label>Habilidades:
+                       {{form.habilidades}}
+                    </label>
+                </div>
+                
+                <div class="cell">
+                    <button type="submit" class="success button">Guardar</button>
+                </div>
+                
+
+            </form>
+
+        </div>
+    </div>
+
+</div>
+{% endblock content %}

@@ -1,0 +1,16 @@
+<form method="GET">
+  <input type="text" id="kword" name="kword" placeholder="Ingrese ID aquí">
+  <button type="submit">Buscar</button>
+</form>
+
+<ul>
+  {% for e in empleado %}
+      <li>{{ e.first_name }} {{ e.last_name }} - ID: {{ e.id }}</li>
+      <h3>Habilidades:</h3>
+      <ul>
+          {% for habilidad in e.habilidades.all %}
+              <li>{{ habilidad.habilidad }}</li>
+          {% endfor %}
+      </ul>
+  {% endfor %}
+</ul>
